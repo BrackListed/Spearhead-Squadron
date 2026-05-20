@@ -8,7 +8,7 @@ export function MainMonitor() {
     const selectedCharacter = characters.find((c) => c.id === selectedId)
     return(
         <div id = "main-dashboard thing" className="flex flex-col p-6 h-full gap-5 w-full ">
-            <div className="flex justify-between w-full">
+            <div className="flex gap-20 w-full">
 
                 <div id = "left" className="flex flex-col gap-5">
                     <h1 className="text-3xl font-bold tracking-wide text-green-500 ">MAIN MONITOR: REGINA SYNC PROFILE</h1>
@@ -25,7 +25,12 @@ export function MainMonitor() {
                     </div>
                 </div>
 
-                <div className="w-full sm:w-48 h-60 shrink-0 bg-[#0d0d0d] border border-neutral-800 rounded overflow-hidden relative group shadow-lg">
+                <div id = 'center' className="flex gap-2">
+                    <button className="px-4 py-1.5 text-xs font-bold tracking-widest text-[#39ff14] uppercase transition-all duration-200 ease-in-out bg-transparent border border-[#39ff14]/30 hover:bg-[#39ff14]/10 hover:border-[#39ff14] hover:shadow-[0_0_12px_rgba(57,255,20,0.4)] cursor-pointer select-none">OVERCLOCK</button>
+                    <button className="px-4 py-1.5 text-xs font-bold tracking-widest text-[#ff3333] uppercase transition-all duration-200 ease-in-out bg-transparent border border-[#ff3333]/30 hover:bg-[#ff3333]/10 hover:border-[#ff3333] hover:shadow-[0_0_12px_rgba(255,51,51,0.5)] cursor-pointer select-none">EJECT</button>
+                </div>
+
+                <div id = "right" className="w-full sm:w-48 h-60 shrink-0 bg-[#0d0d0d] border border-neutral-800 rounded overflow-hidden relative group shadow-lg">
                     <img src = {selectedCharacter!.img} alt = "Image of character" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"></img>
                 </div>
 
