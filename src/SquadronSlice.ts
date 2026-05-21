@@ -14,11 +14,11 @@ interface Character {
 //use a usestate for sync ratio and export that instead so u can always use setsyncratio outside of this
 
 const userSquadron: Character[] = [
-    {id: 1, callSign: "Undertaker", name: "Shinei Nouzen", status: "STANDBY", syncRatio: 50, img: "characters/Shinei_Nouzen.jpg"},
-    {id: 2, callSign: "Werewolf", name: "Raiden Shuga", status: "STANDBY", syncRatio: 15, img: "characters/Raiden_Shuga.jpg"},
-    {id: 3, callSign: "Laughing Fox", name: "Theo Rikka", status: "STANDBY", syncRatio: 15, img: "characters/Theo_Rikka.jpg"},
-    {id: 4, callSign: "Snow Witch", name: "Anju Emma", status: "STANDBY", syncRatio: 20, img: "characters/Anju_Emma.jpg"},
-    {id: 5, callSign: "Gunslinger", name: "Kurena Kukumila", status: "STANDBY", syncRatio: 25, img: "characters/Kurena_Kukumila.jpg"},
+    {id: 1, callSign: "Undertaker", name: "Shinei Nouzen", status: "STANDBY", syncRatio: 50, img: "characters/Shinei_Nouzen.png"},
+    {id: 2, callSign: "Werewolf", name: "Raiden Shuga", status: "STANDBY", syncRatio: 15, img: "characters/Raiden_Shuga.png"},
+    {id: 3, callSign: "Laughing Fox", name: "Theo Rikka", status: "STANDBY", syncRatio: 15, img: "characters/Theo_Rikka.png"},
+    {id: 4, callSign: "Snow Witch", name: "Anju Emma", status: "STANDBY", syncRatio: 20, img: "characters/Anju_Emma.png"},
+    {id: 5, callSign: "Gunslinger", name: "Kurena Kukumila", status: "STANDBY", syncRatio: 25, img: "characters/Kurena_Kukumila.png"},
 ]
 
 
