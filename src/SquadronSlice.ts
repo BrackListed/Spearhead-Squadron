@@ -38,8 +38,11 @@ const SquadronSlice = createSlice({
         },
         setSyncRatio: (state) => {
             const selectedCharacter = state.characterList.find((c) => c.id === state.selectedId) //userSquadron and characterlist is frozen/static due to initialState, in order to unfreeze you need to use "state", annd the one that lives in state is characterList and not userSquadron, hence state.characterList. state = initialState but state is the one that updates, not initialstate
+             const tempCharacter = userSquadron.find((c) => c.id === state.selectedId) 
+            const maxSyncRatio = tempCharacter!.syncRatio * 2 //needs to go to the original old value, not state. Why does it update?
+            console.log(maxSyncRatio)
             if(selectedCharacter){ //just to avoid using ! because of the future eject button
-                if(selectedCharacter.syncRatio < 100){
+                if(selectedCharacter.syncRatio < maxSyncRatio){
                     selectedCharacter.syncRatio *= 2
                 }
             }
