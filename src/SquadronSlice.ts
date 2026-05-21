@@ -35,10 +35,15 @@ const SquadronSlice = createSlice({
     reducers: {
         selectCharacter: (state, action) => {
             state.selectedId = action.payload //use this later with .find find squadron and compare if its equal to selected id
+            console.log(state.selectedId)
+        },
+        ejectCharacter: (state) => {
+            const selectedCharacter = state.selectedId
+            state.characterList = state.characterList.filter((c) => c.id !== selectedCharacter) //character id not equal to selected id 
         },
         setSyncRatio: (state) => {
             const selectedCharacter = state.characterList.find((c) => c.id === state.selectedId) //userSquadron and characterlist is frozen/static due to initialState, in order to unfreeze you need to use "state", annd the one that lives in state is characterList and not userSquadron, hence state.characterList. state = initialState but state is the one that updates, not initialstate
-             const tempCharacter = userSquadron.find((c) => c.id === state.selectedId) 
+             const tempCharacter = userSquadron.find((c) => c.id === state.selectedId) //use userSquadron and not characterList, because characterList is dynamic and changes
             const maxSyncRatio = tempCharacter!.syncRatio * 2 //needs to go to the original old value, not state. Why does it update?
             console.log(maxSyncRatio)
             if(selectedCharacter){ //just to avoid using ! because of the future eject button
@@ -53,5 +58,5 @@ const SquadronSlice = createSlice({
 )
 
 
-export const {selectCharacter, setSyncRatio} = SquadronSlice.actions
+export const {selectCharacter, setSyncRatio, ejectCharacter} = SquadronSlice.actions
 export default SquadronSlice.reducer
