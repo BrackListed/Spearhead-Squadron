@@ -39,7 +39,9 @@ const SquadronSlice = createSlice({
         setSyncRatio: (state) => {
             const selectedCharacter = state.characterList.find((c) => c.id === initialState.selectedId) //userSquadron and characterlist is frozen/static due to initialState, in order to unfreeze you need to use "state", annd the one that lives in state is characterList and not userSquadron, hence state.characterList
             if(selectedCharacter){ //just to avoid using ! because of the future eject button
-                selectedCharacter.syncRatio *= 2
+                if(selectedCharacter.syncRatio < 100){
+                    selectedCharacter.syncRatio *= 2
+                }
             }
         }
 
