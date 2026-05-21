@@ -16,10 +16,10 @@ export function MainMonitor() {
     const characters = useSelector((state: RootState) => state.squadronCharacters.characterList)
     const selectedId = useSelector((state: RootState) => state.squadronCharacters.selectedId)
     const selectedCharacter = characters.find((c) => c.id === selectedId)
+    console.log(selectedId)
     return(
         <div id = "main-dashboard thing" className="flex flex-col p-6 h-full gap-5 w-full ">
-            <div className="flex justify-evenly w-full">
-
+            {selectedId !== 0 && <div className="flex justify-evenly w-full">
                 <div id = "left" className="flex flex-col gap-5">
                     <h1 className="text-3xl font-bold tracking-wide text-green-500 ">MAIN MONITOR: REGINA SYNC PROFILE</h1>
                     <p className="text-2xl">[SELECTED PILOT: <span className="text-red-500">{selectedCharacter?.callSign}</span>]</p>
@@ -44,7 +44,7 @@ export function MainMonitor() {
                     <img src = {selectedCharacter?.img} alt = "Image of character" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"></img>
                 </div>
 
-            </div>
+            </div>}
 
         </div>
     )

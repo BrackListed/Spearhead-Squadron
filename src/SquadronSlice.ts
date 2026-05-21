@@ -35,11 +35,11 @@ const SquadronSlice = createSlice({
     reducers: {
         selectCharacter: (state, action) => {
             state.selectedId = action.payload //use this later with .find find squadron and compare if its equal to selected id
-            console.log(state.selectedId)
         },
         ejectCharacter: (state) => {
             const selectedCharacter = state.selectedId
             state.characterList = state.characterList.filter((c) => c.id !== selectedCharacter) //character id not equal to selected id 
+            state.selectedId = 0 //keeps everything in redux, instead of using a boolean of usestate from app
         },
         setSyncRatio: (state) => {
             const selectedCharacter = state.characterList.find((c) => c.id === state.selectedId) //userSquadron and characterlist is frozen/static due to initialState, in order to unfreeze you need to use "state", annd the one that lives in state is characterList and not userSquadron, hence state.characterList. state = initialState but state is the one that updates, not initialstate
