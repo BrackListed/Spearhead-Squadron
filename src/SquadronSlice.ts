@@ -37,7 +37,7 @@ const SquadronSlice = createSlice({
             state.selectedId = action.payload //use this later with .find find squadron and compare if its equal to selected id
         },
         setSyncRatio: (state) => {
-            const selectedCharacter = state.characterList.find((c) => c.id === initialState.selectedId) //userSquadron and characterlist is frozen/static due to initialState, in order to unfreeze you need to use "state", annd the one that lives in state is characterList and not userSquadron, hence state.characterList
+            const selectedCharacter = state.characterList.find((c) => c.id === state.selectedId) //userSquadron and characterlist is frozen/static due to initialState, in order to unfreeze you need to use "state", annd the one that lives in state is characterList and not userSquadron, hence state.characterList. state = initialState but state is the one that updates, not initialstate
             if(selectedCharacter){ //just to avoid using ! because of the future eject button
                 if(selectedCharacter.syncRatio < 100){
                     selectedCharacter.syncRatio *= 2
