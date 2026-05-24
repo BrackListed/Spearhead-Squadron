@@ -4,14 +4,6 @@ import { setSyncRatio } from "../SquadronSlice"; //impport this instead of usese
 import { ejectCharacter } from "../SquadronSlice";
 
 export function MainMonitor() {
-    interface Character {
-        id: number;
-         callSign: string;
-        name: string;
-        status: 'ACTIVE' | 'STANDBY' | 'KIA';
-        syncRatio: number;
-        img: string
-    }
     const dispatch = useDispatch()
     const characters = useSelector((state: RootState) => state.squadronCharacters.characterList)
     const selectedId = useSelector((state: RootState) => state.squadronCharacters.selectedId)
